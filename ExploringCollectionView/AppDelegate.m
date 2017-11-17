@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  ExploringCollectionView
 //
-//  Created by HeLin KYKJ on 2017/11/16.
+//  Created by HeLin on 2017/11/16.
 //  Copyright © 2017年 CDFGJ. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "HLCardController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:[[HLCardController alloc]init] ];
+    
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
